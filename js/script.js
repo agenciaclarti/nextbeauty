@@ -1,11 +1,11 @@
 "use strict";
 
 const EVENT_CONFIG = {
-  eventName: "Next Beauty Experience 2026",
-  brandName: "Workshop Next Beauty",
+  eventName: "Imersão Next Beauty — 3ª edição",
+  brandName: "Imersão Next Beauty",
 
-  mainEventDate: "2026-10-10",
-  vipEventDate: "2026-10-11",
+  mainEventDate: "",
+  vipEventDate: "",
 
   regularCheckoutUrl: "",
   vipCheckoutUrl: "",
@@ -13,26 +13,24 @@ const EVENT_CONFIG = {
   whatsappUrl: "",
   whatsappNumber: "5522992362477",
   whatsappMessage:
-    "Olá! Gostaria de receber informações sobre o Next Beauty Experience 2026.",
+    "Olá! Gostaria de receber informações sobre a Imersão Next Beauty, nos dias 03 e 04 de abril.",
   regularWhatsappMessage:
-    "Olá! Quero garantir meu ingresso Regular para o Next Beauty Experience 2026, com acesso ao dia 10, no valor de R$ 247,00. Pode me orientar sobre a inscrição?",
+    "Olá! Quero garantir meu ingresso para o Setor Hub da Imersão Next Beauty, no valor de R$ 597,00. Pode me orientar sobre a inscrição?",
   vipWhatsappMessage:
-    "Olá! Quero garantir meu ingresso Business VIP para o Next Beauty Experience 2026, com acesso aos dias 10 e 11, no valor de R$ 347,00. Pode me orientar sobre a inscrição?",
+    "Olá! Quero garantir meu ingresso para o Setor Select da Imersão Next Beauty, no valor de R$ 797,00. Pode me orientar sobre a inscrição?",
 
-  venueName: "Pousada do PC",
+  venueName: "Hotel Caiçara",
   venueAddress:
-    "Av. Geraldo Magela Rodrigues (RJ-186), 2936 — Jorge Assis de Oliveira (Asa Branca), Bom Jesus do Itabapoana — RJ, 28360-000",
-  venueInstagram:
-    "https://www.instagram.com/pousadadopc?igsh=MTF6ZGVlY3NoMmF5dg==",
-  mapUrl: "https://maps.app.goo.gl/2ZE84LxtcVcPACSH6?g_st=ic",
+    "Rua Coronel José Bastos, 2255 — Marechal Castelo Branco, Itaperuna — RJ, 28300-000",
+  venueInstagram: "",
+  mapUrl: "https://maps.app.goo.gl/4UKzXL8a8BSeKuBN7",
 
-  instagramUrl:
-    "https://www.instagram.com/workshop.nextbeauty?igsh=MWRnYmRiaHlzdzRvYg%3D%3D&utm_source=qr",
+  instagramUrl: "https://www.instagram.com/imersao.nextbeauty/",
   officialUrl: "",
 
-  regularPrice: "R$ 247,00",
+  regularPrice: "R$ 597,00",
   regularInstallments: "",
-  vipPrice: "R$ 347,00",
+  vipPrice: "R$ 797,00",
   vipInstallments: "",
 
   speakersEnabled: false,
@@ -40,7 +38,7 @@ const EVENT_CONFIG = {
   testimonialsEnabled: false,
 
   officialEventImageEnabled: false,
-  officialVenueImageEnabled: true,
+  officialVenueImageEnabled: false,
 
   countdownEnabled: false,
   countdownDate: "",
@@ -57,7 +55,7 @@ const EVENT_CONFIG = {
   venueState: "",
   eventImageUrl: "",
   currency: "BRL",
-  regularPriceNumeric: "247.00",
+  regularPriceNumeric: "597.00",
   ticketAvailability: "",
 };
 
@@ -109,11 +107,18 @@ function showNotice(message) {
 }
 
 function scrollToSection(selector) {
+  const behavior = reducedMotionQuery.matches ? "auto" : "smooth";
+
+  if (selector === "#topo") {
+    window.scrollTo({ top: 0, left: 0, behavior });
+    return;
+  }
+
   const target = getElement(selector);
   if (!target) return;
 
   target.scrollIntoView({
-    behavior: reducedMotionQuery.matches ? "auto" : "smooth",
+    behavior,
     block: "start",
   });
 }

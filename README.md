@@ -1,6 +1,6 @@
-# Next Beauty Experience 2026
+# Imersão Next Beauty
 
-Landing page estática, responsiva e mobile-first para o Workshop Next Beauty. O projeto utiliza somente HTML5, CSS3 e JavaScript puro.
+Landing page estática, responsiva e mobile-first para a 3ª edição da Imersão Next Beauty. O projeto utiliza somente HTML5, CSS3 e JavaScript puro.
 
 ## Como abrir o projeto
 
@@ -42,8 +42,8 @@ DDD, apenas com dígitos:
 whatsappUrl: "",
 whatsappNumber: "5522992362477",
 whatsappMessage: "Mensagem do atendimento geral.",
-regularWhatsappMessage: "Mensagem do ingresso Regular.",
-vipWhatsappMessage: "Mensagem do ingresso Business VIP.",
+regularWhatsappMessage: "Mensagem do ingresso Setor Hub.",
+vipWhatsappMessage: "Mensagem do ingresso Setor Select.",
 ```
 
 Também é possível usar um link curto do WhatsApp Business:
@@ -60,9 +60,9 @@ personalizadas por ingresso deixam de ser aplicadas pelo site.
 Os cards exibem “Em breve” enquanto os valores estiverem vazios. Para publicar os preços:
 
 ```js
-regularPrice: "R$ 247,00",
+regularPrice: "R$ 597,00",
 regularInstallments: "",
-vipPrice: "R$ 347,00",
+vipPrice: "R$ 797,00",
 vipInstallments: "",
 ```
 
@@ -70,22 +70,25 @@ Use apenas valores e condições oficialmente definidos. Não inclua preços ris
 
 ## Logo e imagens
 
-A logo oficial foi extraída do PDF fornecido, convertida em PNG transparente e integrada diretamente ao site sem alteração de proporção ou cores.
+A identidade oficial usa as versões branca, dourada e preta da marca, sem alteração de proporção ou cores.
 
 Adicione os arquivos autorizados nestes caminhos:
 
 ```text
-assets/images/logo-next-beauty.png
-assets/images/logo-next-beauty-monograma.png
-assets/images/hero-evento.webp
-assets/images/local.png
+assets/images/logo-branca.svg
+assets/images/logo-dourada.svg
+assets/images/logo-preta.svg
+assets/images/foto-idealizadores.svg
+assets/images/local-hotel-caicara.png
+assets/images/local-hotel-caicara2.png
+assets/images/local-hotel-caicara3.png
 ```
 
 Depois de adicionar as fotografias, confira em `EVENT_CONFIG`:
 
 ```js
 officialEventImageEnabled: true,
-officialVenueImageEnabled: true, // já está ativo
+officialVenueImageEnabled: false,
 ```
 
 Use WebP ou AVIF para fotografias, dimensões adequadas ao uso e autorização expressa da organização. Não copie imagens do Instagram sem permissão.
@@ -154,14 +157,14 @@ Nunca publique depoimentos fictícios.
 Confirme os dados antes da publicação e preencha:
 
 ```js
-venueName: "Pousada do PC",
-venueAddress: "Endereço oficial completo",
-mapUrl: "https://maps.google.com/...",
+venueName: "Hotel Caiçara",
+venueAddress: "Rua Coronel José Bastos, 2255 — Marechal Castelo Branco, Itaperuna — RJ, 28300-000",
+mapUrl: "https://maps.app.goo.gl/4UKzXL8a8BSeKuBN7",
 instagramUrl: "https://www.instagram.com/perfil-do-evento",
 officialUrl: "https://dominio-oficial.com.br",
 ```
 
-O botão “Como chegar” e o Instagram oficial só aparecem quando seus links estiverem configurados. O mapa incorporado fica na seção “Local”; mantenha o endereço do `src` do iframe em `index.html` alinhado com `mapUrl`. A canonical só é publicada quando a URL oficial estiver configurada.
+O local confirmado é o Hotel Caiçara, em Itaperuna — RJ. Configure endereço, mapa e links somente após a confirmação dos dados completos. A canonical só é publicada quando a URL oficial estiver configurada.
 
 ## Contagem regressiva
 
@@ -169,7 +172,7 @@ A contagem está desativada por padrão. Para ativá-la, use uma data e hora ISO
 
 ```js
 countdownEnabled: true,
-countdownDate: "2026-10-10T09:00:00-03:00",
+countdownDate: "AAAA-04-03T09:00:00-03:00",
 ```
 
 Ative somente depois que o horário oficial estiver confirmado.
@@ -220,4 +223,4 @@ Todos os caminhos são relativos e funcionam em hospedagem estática, inclusive 
 - Revisar política de privacidade e termos.
 - Cadastrar somente palestrantes, patrocinadores e depoimentos confirmados.
 - Testar os dois tipos de ingresso em celular e desktop.
-- Confirmar que o dia 11 continua claramente marcado como exclusivo para VIP.
+- Confirmar o ano, o endereço e os horários dos dias 03 e 04 de abril.
