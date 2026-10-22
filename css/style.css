@@ -1287,7 +1287,7 @@ svg:not(.svg-sprite) {
 
 .student-photo--wide {
   grid-column: 1 / -1;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
   border-radius: 7rem 7rem var(--radius-md) var(--radius-md);
 }
 
